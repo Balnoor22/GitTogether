@@ -8,6 +8,7 @@ import {BASE_URL} from "../utils/constants";
 const Login = () => {
   const [emailId, setEmailId] = useState("noorroby22@gmail.com");
   const [password, setPassword] = useState("Jattdesi@45");
+  const [error,setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //as this fxn will make an API call,make it async.We can do API call using fetch() or we can use npm axios.(both work same way)
@@ -29,7 +30,7 @@ const Login = () => {
       dispatch(addUser(res.data));  //add the res data to our redux store
       return navigate("/"); //after login go to /
     } catch (err) {
-      console.error(err);
+      setError(err?.response?.data || "Something went wwrong!");
     }
   };
 
@@ -58,6 +59,7 @@ const Login = () => {
               />
             </fieldset>
           </div>
+          <p className="text-red-500 my-1 px-3">{error}</p>
           <div className="card-actions justify-center items-center">
             <button className="btn btn-primary" onClick={handleLogic}>
               Login
