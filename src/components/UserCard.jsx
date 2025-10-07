@@ -7,7 +7,7 @@ const UserCard = ({ user }) => {
         <img
           src={user.photoUrl}
           alt="Photo"
-          className="w-full max-h-60 object-cover rounded-t-lg"
+          className="w-full h-auto object-contain rounded-t-lg"
         />
       </figure>
       <div className="card-body">
