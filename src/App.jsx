@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Feed from "./components/Feed";
 import Connections from "./components/Connections";
+import Requests from "./components/Requests";
 
 //basename is the root of ur applicationa and all the routing inside BrowserRouter will work *relative to this path. i.e if u write basename="/app" then all routes should start with /app/user,/app/signup etc
 function App() {
@@ -22,7 +23,7 @@ function App() {
               <Route path="/" element={<Feed />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/connections" element={<Connections />} />
-              <Route path="/requests" element={<Profile />} />
+              <Route path="/requests" element={<Requests />} />
             </Route>
           </Routes>
         </BrowserRouter>
